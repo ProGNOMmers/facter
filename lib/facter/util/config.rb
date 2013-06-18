@@ -23,7 +23,7 @@ module Facter::Util::Config
 
   def self.windows_data_dir
     if Dir.const_defined? 'COMMON_APPDATA' then
-      Dir::COMMON_APPDATA
+      Dir::COMMON_APPDATA.encode('ASCII')
     else
       nil
     end
